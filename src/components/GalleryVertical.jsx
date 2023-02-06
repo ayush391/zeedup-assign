@@ -43,7 +43,6 @@ const GalleryVertical = () => {
             setCurrentSize(size)
         })
 
-        console.log(currentSize)
     }, [scrollYProgress.current])
 
     return (
@@ -59,7 +58,7 @@ const GalleryVertical = () => {
                 {
                     galleryItems.map((item, idx) => {
                         return (
-                            <GalleryCard item={item} idx={idx} />
+                            <GalleryCard key={idx} item={item} idx={idx} />
                         )
                     })
                 }

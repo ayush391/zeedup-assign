@@ -21,7 +21,7 @@ const Hero = () => {
     }, [loopingText])
 
     return (
-        <Container maxWidth='xl' sx={{ marginBottom: '100px' }}>
+        <Container sx={{ height: '100vh' }}>
             <Box sx={{
                 position: 'absolute',
                 top: 0,
@@ -32,21 +32,34 @@ const Hero = () => {
                 backgroundImage: `url(${BackgroundImage})`,
                 backgroundPosition: 'center center',
                 backgroundSize: "cover",
-                "&:before": {
-                    background: 'linear-gradient(rgb(14, 13, 13) 100%, rgba(14, 13, 13, 0) 0%)'
-
-                }
             }}>
+                <Box sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    height: '100%',
+                    width: '100%',
+                    zIndex: '-9',
+                    background: 'linear-gradient(rgb(14, 13, 13) 0%, rgba(14, 13, 13, 0) 100%)',
+                    backgroundPosition: 'center center',
+                    backgroundSize: "cover",
+                    rotate: '180deg',
+                }} />
 
             </Box>
-            <div >
-                <Typography variant='h1' color='white' fontFamily='Archivo Black' >
+            <Box
+                sx={{
+                    marginTop: '2rem'
+                }}
+            >
+
+                <Typography variant='h1' color='white' fontFamily='Archivo Black' sx={{ fontSize: '2.5rem' }}>
                     3D VENUES
                 </Typography>
-                <Typography variant='h1' color='white' fontFamily='Archivo Black'>
+                <Typography variant='h1' color='white' fontFamily='Archivo Black' sx={{ fontSize: '2.5rem' }}>
                     FOR INTERACTIVE
                 </Typography>
                 <Typography variant='h1' fontFamily='Archivo Black' sx={{
+                    fontSize: '2.5rem',
                     background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent"
@@ -54,8 +67,8 @@ const Hero = () => {
                     {loopTextArray[loopingText]}
                 </Typography>
                 <CTAButton />
+            </Box>
 
-            </div>
         </Container>
     )
 }

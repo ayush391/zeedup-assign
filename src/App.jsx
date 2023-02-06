@@ -1,4 +1,4 @@
-import { Box, CssBaseline } from '@mui/material'
+import { Box, createTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@mui/material'
 import Benefits from './components/Benefits'
 import GalleryVertical from './components/GalleryVertical'
 import Hero from './components/Hero'
@@ -9,26 +9,38 @@ import Avatars from './components/Avatars'
 import './App.css'
 import Footer from './components/Footer'
 import ScrollBar from './components/ScrollBar'
+import GalleryHorizontal from './components/GalleryHorizontal'
+
+let theme = createTheme({
+  palette: {
+    mode: 'dark'
+  }
+});
+theme = responsiveFontSizes(theme);
 
 function App() {
 
   return (
     <>
-      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
 
-      <Box display='flex' sx={{ flex: 1, justifyContent: 'center' }}>
-        <ScrollBar />
+        <Box sx={{ display: { lg: 'flex', md: 'block' } }}>
 
-        <div>
-          <Navbar />
-          <Hero />
-          <Benefits />
-          <GalleryVertical />
-          <Immersive />
-          <Avatars />
-          <Footer />
-        </div>
-      </Box>
+          <ScrollBar />
+
+          <Box>
+            <Navbar />
+            <Hero />
+            <Benefits />
+            <GalleryVertical />
+            <Immersive />
+            {/* <GalleryHorizontal /> */}
+            <Avatars />
+            <Footer />
+          </Box>
+        </Box>
+      </ThemeProvider>
     </>
   )
 }

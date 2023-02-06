@@ -5,37 +5,24 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Benefits = () => {
     const ref = useRef(null)
-    const { scrollYProgress } = useScroll({ target: ref, offset: ['-150px center', '90% center'] })
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['-10% center', '40% center'] })
 
     const [currentSize, setCurrentSize] = useState(0)
-
-
-    // const scaleX = useSpring(scrollYProgress, {
-    //     stiffness: 100,
-    //     damping: 30,
-    //     restDelta: 0.001
-    // });
 
     useEffect(() => {
 
         scrollYProgress.onChange((size) => setCurrentSize(size))
-        // scrollYProgress.onChange((size) => setCurrentSize(motionValue(size, {
-        //     stiffness: 100,
-        //     damping: 30,
-        //     restDelta: 0.001
-        // })))
-        console.log(currentSize)
     }, [scrollYProgress.current])
 
     return (
-        <Box sx={{ backgroundColor: '#000' }}
+        <Container sx={{ backgroundColor: '#000' }}
             ref={ref}
 
         >
             <Container maxWidth='xl' sx={{ paddingTop: '2rem' }}>
                 <Typography color='grey' variant='h5' fontFamily='Archivo Black'>BENEFITS</Typography>
             </Container>
-            <Container maxWidth='xl' sx={{ padding: '12rem 0rem' }} >
+            <Container maxWidth='xl' sx={{ padding: '5rem 0rem', }} >
                 <MotionConfig transition={{
                     stiffness: 200,
                     type: 'spring',
@@ -51,6 +38,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
+                            fontSize: '2.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -72,6 +60,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
+                            fontSize: '2.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -79,7 +68,7 @@ const Benefits = () => {
                         }}
                         initial={{ backgroundSize: '0' }}
                         animate={{
-                            backgroundSize: `${(currentSize * 100) - 9}%`
+                            backgroundSize: `${(currentSize * 100) - 5}%`
 
                         }}
                     >
@@ -94,6 +83,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
+                            fontSize: '2.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -101,7 +91,7 @@ const Benefits = () => {
                         }}
                         initial={{ backgroundSize: '0' }}
                         animate={{
-                            backgroundSize: `${(currentSize * 100) - 6}%`
+                            backgroundSize: `${(currentSize * 100) - 2}%`
 
                         }}
                     >
@@ -116,6 +106,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
+                            fontSize: '2.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -123,7 +114,7 @@ const Benefits = () => {
                         }}
                         initial={{ backgroundSize: '0' }}
                         animate={{
-                            backgroundSize: `${(currentSize * 100) - 8}%`
+                            backgroundSize: `${(currentSize * 100) - 4}%`
 
                         }}
                     >
@@ -139,6 +130,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
+                            fontSize: '2.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -146,7 +138,7 @@ const Benefits = () => {
                         }}
                         initial={{ backgroundSize: '0' }}
                         animate={{
-                            backgroundSize: `${(currentSize * 100) - 12}%`
+                            backgroundSize: `${(currentSize * 100) - 8}%`
 
                         }}
                     >
@@ -160,6 +152,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
+                            fontSize: '2.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -167,7 +160,7 @@ const Benefits = () => {
                         }}
                         initial={{ backgroundSize: '0' }}
                         animate={{
-                            backgroundSize: `${(currentSize * 100) - 25}%`
+                            backgroundSize: `${(currentSize * 100) - 20}%`
 
                         }}
                     >
@@ -176,15 +169,21 @@ const Benefits = () => {
                     </Typography>
                 </MotionConfig>
             </Container>
-            <Container sx={{ padding: '5rem 0rem' }}>
+            <Container sx={{ padding: '2rem 0rem' }}>
                 <Typography
-                    color="white" variant='h3' textAlign='right'
+                    color="white" variant='h3' textAlign='center'
+                // sx={{ fontSize: '1.5rem' }}
                 >Stageverse is a no-code platform for creators</Typography>
                 <Typography
-                    color="white" variant='h3' textAlign='left'
-                >and brands to build metaverse venues and host interactive 3D experiences.</Typography>
+                    color="white" variant='h3' textAlign='center'
+                // sx={{ fontSize: '1.5rem' }}
+                > and brands to build metaverse venues</Typography>
+                <Typography
+                    color="white" variant='h3' textAlign='center'
+                // sx={{ fontSize: '1.5rem' }}
+                > and host interactive 3D experiences.</Typography>
             </Container>
-        </Box >
+        </Container >
     )
 }
 

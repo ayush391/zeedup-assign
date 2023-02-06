@@ -1,72 +1,73 @@
-import { Box, Container, Typography } from '@mui/material'
-import { display } from '@mui/system'
-import { motion, MotionConfig, motionValue, useScroll, useSpring, useTransform } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
-import CTAButton from './common/CTAButton'
-import GalleryCard from './GalleryCard'
+import React, { useRef, useState, useLayoutEffect, useCallback } from "react"
+import ResizeObserver from "resize-observer-polyfill"
+import {
+    motion,
+    useViewportScroll,
+    useTransform,
+    useSpring,
+    useScroll
+} from "framer-motion"
+import GalleryHorizontalCard from "./GalleryHorizontalCard"
+import { Container } from "@mui/material"
+
 
 const galleryItems = [
     {
-        title: 'HIGH-FIDELITY AVATARS & VENUES',
+        title: 'DESERT THEATER',
         subtitle: 'Stageverse provides a no-code tool for designing expressive avatars and beautiful custom-branded venues. Includes tools to host highly-interactive live events that combine live streaming and gameplay elements.',
-        img: 'https://stageverse.com/images/landing-page/text-blocks-with-image/Benefit-02.png'
+        img: 'https://stageverse.com/images/landing-page/horizontal-scroll/spaces-3.png'
     },
     {
-        title: 'FROM FLAT WINDOWS TO IMMERSIVE WORLDS',
+        title: 'PRIVATE ISLAND',
         subtitle: 'Stageverse makes it easy for creators and brands to take their existing 2D hosted experiences and amplify them with playable, immersive 3D venues and experiences. Available on Web, iOS and Android.',
-        img: 'https://stageverse.com/images/landing-page/text-blocks-with-image/benefit-01.jpg'
+        img: 'https://stageverse.com/images/landing-page/horizontal-scroll/spaces-2.webp'
     },
     {
-        title: 'SPATIAL AUDIO CONVERSATION',
+        title: 'THE GALLERY',
         subtitle: 'Stageverse enables intimate conversations with others in metaverse spaces via spatial voice chat. This mimics real life with audio being amplified or diminished based on proximity to others.',
-        img: 'https://stageverse.com/images/landing-page/text-blocks-with-image/Benefit-03-min.png'
-    },
-    {
-        title: 'MONETIZE WITH CUSTOM, OWNABLE COLLECTIBLES',
-        subtitle: 'Stageverse provides tools for creating and selling virtual goods, tipping, ticketing, ecommerce, and sponsored venue activations.',
-        img: 'https://stageverse.com/images/landing-page/text-blocks-with-image/Benefit-04.png'
+        img: 'https://stageverse.com/images/landing-page/horizontal-scroll/spaces-4.webp'
     },
 ]
 
 
 const GalleryHorizontal = () => {
-    const ref = useRef(null)
-    const { scrollYProgress } = useScroll({ target: ref, offset: ['-150px center', '50% center'] })
-
-    const [currentSize, setCurrentSize] = useState(0)
-
-
-
-    useEffect(() => {
-
-        scrollYProgress.onChange((size) => {
-            setCurrentSize(size)
-        })
-
-        console.log(currentSize)
-    }, [scrollYProgress.current])
-
     return (
-        <Box sx={{ backgroundColor: '#000' }}
-            ref={ref}
-        >
-            <MotionConfig transition={{
-                stiffness: 200,
-                type: 'spring',
-                damping: 30,
-                // restDelta: 0.001
-            }}>
-                {
-                    galleryItems.map((item, idx) => {
-                        return (
-                            <GalleryCard item={item} idx={idx} />
-                        )
-                    })
-                }
+        <>
+            <Container
+                style={{
+                    top: 0,
+                    height: 'auto',
+                    willChange: 'transform',
+                    height: '100vh'
 
-            </MotionConfig>
-
-        </Box >
+                }}>
+                <motion.section
+                    style={{
+                        width: ' max-content',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: 40
+                    }}
+                    initial={{
+                        x: 0
+                    }}
+                    whileInView={{
+                        x: '-200vw'
+                    }}
+                    transition={{
+                        duration: '20'
+                    }}
+                >
+                    {
+                        galleryItems.map((item, idx) => {
+                            return (
+                                <GalleryHorizontalCard idx={idx} item={item} key={idx} />
+                            )
+                        })
+                    }
+                </motion.section>
+            </Container>
+        </>
     )
 }
 

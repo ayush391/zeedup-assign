@@ -3,7 +3,7 @@ import { motion, useScroll } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
 import CTAButton from './common/CTAButton'
 
-const GalleryCard = ({ idx, item }) => {
+const GalleryHorizontalCard = ({ idx, item }) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
         target: ref, offset: ['-10% center', '20% center']
@@ -25,39 +25,29 @@ const GalleryCard = ({ idx, item }) => {
         <Box
             component={motion.div}
             ref={ref}
-            style={{ opacity: opacity }}
             sx={{
-                backgroundImage: `url(${item.img})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                backgroundPosition: { lg: '100%' },
 
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'flex-start',
-                height: '100vh'
+                height: '80vh'
             }}
         >
+            <img src={item.img}>
+            </img>
             <Container
-
+                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
             >
 
                 <Typography color='white' variant='h7' fontFamily='Archivo Black'
-                    gutterBottom
-                >{(idx + 1) + '/' + 4}</Typography>
-                <Typography color='white' variant='h2' fontFamily='Archivo Black'
-                    gutterBottom
-                >{item.title}</Typography>
+                >{(idx + 1) + '/' + 3}</Typography>
+                <Typography color='white' variant='h5' fontFamily='Archivo Black'
 
-                <Typography color='grey'
-                    gutterBottom
-                    marginBottom='2rem'
-                >{item.subtitle}</Typography>
-                <CTAButton />
+                >{item.title}</Typography>
             </Container>
         </Box>
     )
 }
 
-export default GalleryCard
+export default GalleryHorizontalCard
