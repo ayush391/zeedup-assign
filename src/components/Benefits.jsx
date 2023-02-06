@@ -32,7 +32,10 @@ const Benefits = () => {
             ref={ref}
 
         >
-            <Container maxWidth='xl' sx={{ padding: '10rem 0rem' }} >
+            <Container maxWidth='xl' sx={{ paddingTop: '2rem' }}>
+                <Typography color='grey' variant='h5' fontFamily='Archivo Black'>BENEFITS</Typography>
+            </Container>
+            <Container maxWidth='xl' sx={{ padding: '3rem 0rem' }} >
                 <MotionConfig transition={{
                     stiffness: 200,
                     type: 'spring',
