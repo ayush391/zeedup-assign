@@ -1,11 +1,12 @@
-import { AppBar, Container, ListItem, Toolbar } from '@mui/material'
+import { AppBar, Box, Container, ListItem, Toolbar } from '@mui/material'
 import React from 'react'
 
 const Navbar = () => {
     return (
-        <AppBar position='fixed' color='transparent' elevation='none' sx={{
+
+        <AppBar position='sticky' color='transparent' elevation='none' sx={{
             paddingTop: '2rem',
-            background: 'linear-gradient(rgb(14, 13, 13) 0%, rgba(14, 13, 13, 0) 100%)'
+            background: 'linear-gradient(rgb(14, 13, 13) 0%, rgba(14, 13, 13, 0) 100%)',
         }}>
             <Toolbar>
                 <ListItem>

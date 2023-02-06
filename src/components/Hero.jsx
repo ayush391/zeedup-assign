@@ -21,7 +21,7 @@ const Hero = () => {
     }, [loopingText])
 
     return (
-        <Container maxWidth='xl' sx={{ height: '100vh', padding: '10rem 0rem', }}>
+        <Container maxWidth='xl' sx={{ marginBottom: '100px' }}>
             <Box sx={{
                 position: 'absolute',
                 top: 0,
