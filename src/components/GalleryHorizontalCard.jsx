@@ -22,7 +22,7 @@ const GalleryHorizontalCard = ({ idx, item }) => {
     }, [scrollYProgress.current])
 
     return (
-        <Box
+        <Container
             component={motion.div}
             ref={ref}
             sx={{
@@ -30,23 +30,23 @@ const GalleryHorizontalCard = ({ idx, item }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'flex-start',
-                height: '80vh'
+                alignItems: 'center',
+                width: '100vw',
             }}
         >
-            <img src={item.img}>
+            <img height='80%' src={item.img}>
             </img>
             <Container
                 sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
             >
 
-                <Typography color='white' variant='h7' fontFamily='Archivo Black'
+                <Typography color='white' variant='h7' fontSize='1rem' fontFamily='Archivo Black'
                 >{(idx + 1) + '/' + 3}</Typography>
-                <Typography color='white' variant='h5' fontFamily='Archivo Black'
+                <Typography color='white' variant='h5' fontSize='1rem' fontFamily='Archivo Black'
 
                 >{item.title}</Typography>
             </Container>
-        </Box>
+        </Container >
     )
 }
 

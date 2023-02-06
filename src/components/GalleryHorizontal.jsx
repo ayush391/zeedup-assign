@@ -1,11 +1,6 @@
 import React, { useRef, useState, useLayoutEffect, useCallback } from "react"
-import ResizeObserver from "resize-observer-polyfill"
 import {
     motion,
-    useViewportScroll,
-    useTransform,
-    useSpring,
-    useScroll
 } from "framer-motion"
 import GalleryHorizontalCard from "./GalleryHorizontalCard"
 import { Container } from "@mui/material"
@@ -35,27 +30,27 @@ const GalleryHorizontal = () => {
         <>
             <Container
                 style={{
-                    top: 0,
-                    height: 'auto',
                     willChange: 'transform',
-                    height: '100vh'
+                    height: '150vh'
 
                 }}>
                 <motion.section
                     style={{
-                        width: ' max-content',
                         display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: 40
+                        gap: 5,
                     }}
+
                     initial={{
                         x: 0
                     }}
-                    whileInView={{
-                        x: '-200vw'
+                    animate={{
+                        x: '-150vw'
                     }}
                     transition={{
-                        duration: '20'
+                        type: 'tween',
+                        duration: '50',
+                        repeat: 10,
+                        repeatType: "reverse",
                     }}
                 >
                     {

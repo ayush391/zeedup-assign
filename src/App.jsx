@@ -13,7 +13,10 @@ import GalleryHorizontal from './components/GalleryHorizontal'
 
 let theme = createTheme({
   palette: {
-    mode: 'dark'
+    background: {
+      default: '#000',
+      paper: '#000',
+    },
   }
 });
 theme = responsiveFontSizes(theme);
@@ -29,13 +32,13 @@ function App() {
 
           <ScrollBar />
 
-          <Box width='100%'>
+          <Box>
             <Navbar />
             <Hero />
             <Benefits />
             <GalleryVertical />
             <Immersive />
-            {/* <GalleryHorizontal /> */}
+            <GalleryHorizontal />
             <Avatars />
             <Footer />
           </Box>
