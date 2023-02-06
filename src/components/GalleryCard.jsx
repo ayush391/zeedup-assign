@@ -6,7 +6,7 @@ import CTAButton from './common/CTAButton'
 const GalleryCard = ({ idx, item }) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
-        target: ref, offset: ['-50% center', '20% center']
+        target: ref, offset: ['-20% center', '40% center']
     })
 
     const [opacity, setOpacity] = useState(0)
@@ -24,6 +24,9 @@ const GalleryCard = ({ idx, item }) => {
 
     return (
         <Box
+            component={motion.div}
+            ref={ref}
+            style={{ opacity: opacity }}
             sx={{
                 backgroundImage: `url(${item.img})`,
                 backgroundRepeat: 'no-repeat',
@@ -39,9 +42,7 @@ const GalleryCard = ({ idx, item }) => {
         >
             <Container
                 maxWidth='xl'
-                component={motion.div}
-                ref={ref}
-                style={{ opacity: opacity }}
+
 
 
             >
