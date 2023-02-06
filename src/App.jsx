@@ -29,7 +29,7 @@ function App() {
 
           <ScrollBar />
 
-          <Box>
+          <Box width='100%'>
             <Navbar />
             <Hero />
             <Benefits />

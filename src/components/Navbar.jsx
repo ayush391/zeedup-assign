@@ -5,27 +5,26 @@ const Navbar = () => {
     return (
 
         <AppBar position='sticky' color='transparent' sx={{
-            paddingTop: '2rem',
+            top: '0',
+            padding: '2rem',
             background: 'linear-gradient(rgb(14, 13, 13) 0%, rgba(14, 13, 13, 0) 100%)',
             boxShadow: 'none'
         }}>
-            <Toolbar sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-                <ListItem >
-                    <Box sx={{ display: { lg: 'block', xs: 'none' } }}>
-                        <img src='https://stageverse.com/images/other/stageverse-logo.svg'></img>
-                    </Box>
-                    <Box sx={{ display: { xs: 'block', lg: 'none' } }}>
-                        <img height='50px' src={logo}></img>
-                    </Box>
-                </ListItem>
-                <ListItem >
-                    <Box sx={{ display: { lg: 'none', xs: 'block' } }}>
-                        <img src='https://stageverse.com/images/other/menu-icon.svg'></img>
-                    </Box>
+            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                {/* <ListItem > */}
+                <Box sx={{ display: { lg: 'block', xs: 'none' } }}>
+                    <img src='https://stageverse.com/images/other/stageverse-logo.svg'></img>
+                </Box>
+                <Box sx={{ display: { xs: 'block', lg: 'none' } }}>
+                    <img height='50px' src={logo}></img>
+                </Box>
+                {/* </ListItem> */}
+                <Box sx={{ display: { lg: 'none', xs: 'block' } }}>
+                    <img src='https://stageverse.com/images/other/menu-icon.svg'></img>
+                </Box>
 
-                </ListItem>
 
-            </Toolbar>
+            </Toolbar >
         </AppBar >
     )
 }
