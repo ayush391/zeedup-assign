@@ -2,6 +2,7 @@ import { backdropClasses, Box, Container, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 
 import BackgroundImage from '../assets/bgImageHero.webp'
+import CTAButton from './common/CTAButton'
 
 
 
@@ -52,25 +53,7 @@ const Hero = () => {
                 }}>
                     {loopTextArray[loopingText]}
                 </Typography>
-                <button style={{
-                    background: '-webkit-linear-gradient(-70deg, #f75df6 20%, #6e80ef 70%, #61dfc7 95%)',
-                    borderRadius: '50px',
-                    border: 'none',
-                    padding: '2px',
-                    cursor: 'pointer'
-                }}
-                ><Typography color='white' variant='h5' sx={{
-                    padding: '1rem 5rem',
-                    backgroundColor: '#000',
-                    borderRadius: '50px',
-                    margin: '0',
-                    '&:hover': {
-                        backgroundColor: 'transparent',
-                    }
-                }}>
-                        JUMP IN
-                    </Typography>
-                </button>
+                <CTAButton />
 
             </div>
         </Container>
