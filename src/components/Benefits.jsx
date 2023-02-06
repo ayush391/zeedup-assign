@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Benefits = () => {
     const ref = useRef(null)
-    const { scrollYProgress } = useScroll({ target: ref, offset: ['-50px center', '90% center'] })
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['-150px center', '90% center'] })
 
     const [currentSize, setCurrentSize] = useState(0)
 
@@ -35,7 +35,7 @@ const Benefits = () => {
             <Container maxWidth='xl' sx={{ paddingTop: '2rem' }}>
                 <Typography color='grey' variant='h5' fontFamily='Archivo Black'>BENEFITS</Typography>
             </Container>
-            <Container maxWidth='xl' sx={{ padding: '3rem 0rem' }} >
+            <Container maxWidth='xl' sx={{ padding: '12rem 0rem' }} >
                 <MotionConfig transition={{
                     stiffness: 200,
                     type: 'spring',
@@ -56,6 +56,7 @@ const Benefits = () => {
                             // backgroundSize: `${(currentSize * 100)}%`
 
                         }}
+                        initial={{ backgroundSize: '0' }}
                         animate={{
                             backgroundSize: `${(currentSize * 100)}%`
 
@@ -76,6 +77,7 @@ const Benefits = () => {
                             // backgroundSize: `${(currentSize * 100)}%`
 
                         }}
+                        initial={{ backgroundSize: '0' }}
                         animate={{
                             backgroundSize: `${(currentSize * 100) - 9}%`
 
@@ -97,6 +99,7 @@ const Benefits = () => {
                             // backgroundSize: `${(currentSize * 100)}%`
 
                         }}
+                        initial={{ backgroundSize: '0' }}
                         animate={{
                             backgroundSize: `${(currentSize * 100) - 6}%`
 
@@ -118,6 +121,7 @@ const Benefits = () => {
                             // backgroundSize: `${(currentSize * 100)}%`
 
                         }}
+                        initial={{ backgroundSize: '0' }}
                         animate={{
                             backgroundSize: `${(currentSize * 100) - 8}%`
 
@@ -140,6 +144,7 @@ const Benefits = () => {
                             // backgroundSize: `${(currentSize * 100)}%`
 
                         }}
+                        initial={{ backgroundSize: '0' }}
                         animate={{
                             backgroundSize: `${(currentSize * 100) - 12}%`
 
@@ -160,6 +165,7 @@ const Benefits = () => {
                             // backgroundSize: `${(currentSize * 100)}%`
 
                         }}
+                        initial={{ backgroundSize: '0' }}
                         animate={{
                             backgroundSize: `${(currentSize * 100) - 25}%`
 
@@ -169,7 +175,14 @@ const Benefits = () => {
                         ONLINE
                     </Typography>
                 </MotionConfig>
-
+            </Container>
+            <Container sx={{ padding: '5rem 0rem' }}>
+                <Typography
+                    color="white" variant='h3' textAlign='right'
+                >Stageverse is a no-code platform for creators</Typography>
+                <Typography
+                    color="white" variant='h3' textAlign='left'
+                >and brands to build metaverse venues and host interactive 3D experiences.</Typography>
             </Container>
         </Box >
     )
