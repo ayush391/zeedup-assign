@@ -3,7 +3,7 @@ import {
     motion,
 } from "framer-motion"
 import GalleryHorizontalCard from "./GalleryHorizontalCard"
-import { Container } from "@mui/material"
+import { Box, Container } from "@mui/material"
 
 
 const galleryItems = [
@@ -27,42 +27,42 @@ const galleryItems = [
 
 const GalleryHorizontal = () => {
     return (
-        <>
-            <Container
+        <Container
+            style={{
+                height: '150vh'
+
+            }}>
+            <Box component={motion.div}
+                sx={{
+                    display: { lg: 'flex', xs: 'none' },
+
+                }}
                 style={{
-                    willChange: 'transform',
-                    height: '150vh'
+                    gap: 5,
+                }}
 
-                }}>
-                <motion.section
-                    style={{
-                        display: 'flex',
-                        gap: 5,
-                    }}
-
-                    initial={{
-                        x: 0
-                    }}
-                    animate={{
-                        x: '-150vw'
-                    }}
-                    transition={{
-                        type: 'tween',
-                        duration: '50',
-                        repeat: 10,
-                        repeatType: "reverse",
-                    }}
-                >
-                    {
-                        galleryItems.map((item, idx) => {
-                            return (
-                                <GalleryHorizontalCard idx={idx} item={item} key={idx} />
-                            )
-                        })
-                    }
-                </motion.section>
-            </Container>
-        </>
+                initial={{
+                    x: 0
+                }}
+                animate={{
+                    x: '-150vw'
+                }}
+                transition={{
+                    type: 'tween',
+                    duration: '50',
+                    repeat: 10,
+                    repeatType: "reverse",
+                }}
+            >
+                {
+                    galleryItems.map((item, idx) => {
+                        return (
+                            <GalleryHorizontalCard idx={idx} item={item} key={idx} />
+                        )
+                    })
+                }
+            </Box>
+        </Container>
     )
 }
 
