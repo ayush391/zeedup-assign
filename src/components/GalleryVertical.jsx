@@ -46,15 +46,15 @@ const GalleryVertical = () => {
     }, [scrollYProgress.current])
 
     return (
-        <Box maxWidth='xl' sx={{ backgroundColor: '#000' }}
-            ref={ref}
-        >
-            <MotionConfig transition={{
-                stiffness: 200,
-                type: 'spring',
-                damping: 30,
-                // restDelta: 0.001
-            }}>
+        <MotionConfig transition={{
+            stiffness: 200,
+            type: 'spring',
+            damping: 30,
+            // restDelta: 0.001
+        }}>
+            <Box maxWidth='xl' sx={{ marginTop: '5rem', backgroundColor: '#000', display: 'flex', flexDirection: 'column', gap: { xs: '10rem', lg: '0rem' } }}
+                ref={ref}
+            >
                 {
                     galleryItems.map((item, idx) => {
                         return (
@@ -63,9 +63,9 @@ const GalleryVertical = () => {
                     })
                 }
 
-            </MotionConfig>
 
-        </Box >
+            </Box >
+        </MotionConfig >
     )
 }
 

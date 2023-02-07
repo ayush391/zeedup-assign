@@ -27,7 +27,8 @@ const GalleryCard = ({ idx, item }) => {
             ref={ref}
             style={{ opacity: opacity }}
             sx={{
-                backgroundImage: `url(${item.img})`,
+
+                backgroundImage: { lg: `url(${item.img})` },
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 backgroundPosition: { lg: '100%' },
@@ -42,7 +43,7 @@ const GalleryCard = ({ idx, item }) => {
             <Container
                 maxWidth='xl'
             >
-
+                <Box width='100%' component='img' sx={{ display: { xs: 'block', lg: 'none' } }} src={item.img}></Box>
                 <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
                     gutterBottom
                 >{(idx + 1) + '/' + 4}</Typography>
