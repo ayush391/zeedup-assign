@@ -46,7 +46,7 @@ const GalleryVertical = () => {
     }, [scrollYProgress.current])
 
     return (
-        <Box sx={{ backgroundColor: '#000' }}
+        <Box maxWidth='xl' sx={{ backgroundColor: '#000' }}
             ref={ref}
         >
             <MotionConfig transition={{

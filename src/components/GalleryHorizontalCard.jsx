@@ -40,9 +40,9 @@ const GalleryHorizontalCard = ({ idx, item }) => {
                 sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
             >
 
-                <Typography color='white' variant='h7' fontSize='1rem' fontFamily='Archivo Black'
+                <Typography color='white' variant='h7' fontSize='1rem' fontFamily='Druk Wide Bold'
                 >{(idx + 1) + '/' + 3}</Typography>
-                <Typography color='white' variant='h5' fontSize='1rem' fontFamily='Archivo Black'
+                <Typography color='white' variant='h5' fontSize='1rem' fontFamily='Druk Wide Bold'
 
                 >{item.title}</Typography>
             </Container>

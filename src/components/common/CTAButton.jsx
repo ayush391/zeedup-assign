@@ -11,8 +11,9 @@ const CTAButton = () => {
             cursor: 'pointer'
         }}
         ><Typography color='white' variant='h6'
-            fontFamily='Archivo Black'
+            fontFamily='Druk Wide Bold'
             sx={{
+                fontSize: '1rem',
                 padding: '1rem 5rem',
                 backgroundColor: '#000',
                 borderRadius: '50px',

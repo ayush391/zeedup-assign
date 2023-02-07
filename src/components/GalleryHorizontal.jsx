@@ -28,6 +28,7 @@ const galleryItems = [
 const GalleryHorizontal = () => {
     return (
         <Container
+            maxWidth='xl'
             style={{
                 height: '150vh'
 

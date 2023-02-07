@@ -27,14 +27,15 @@ const Avatars = () => {
     }, [scrollYProgress.current])
 
     return (
-        <Box sx={{
+        <Container maxWidth='xl' sx={{
             backgroundColor: '#000',
+            overflowX: 'hidden'
         }}
             ref={ref}
         >
-            <Container maxWidth='xl' sx={{ paddingTop: '2rem' }}>
-                <Typography color='grey' variant='h5' fontFamily='Archivo Black'>EXPRESSIVE AVATARS</Typography>
-            </Container>
+            <Box sx={{ paddingTop: '2rem' }}>
+                <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>EXPRESSIVE AVATARS</Typography>
+            </Box>
 
             <Container
                 maxWidth='xl'
@@ -58,16 +59,16 @@ const Avatars = () => {
 
                     component={motion.div}
                     style={{ y: currentSize }} sx={{ zIndex: 3, height: '100vh', margin: '50% 0' }}>
-                    <Typography variant='h2' color='white' fontFamily='Archivo Black' >
+                    <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
                         EXPRESS
                     </Typography>
-                    <Typography variant='h2' color='white' fontFamily='Archivo Black'>
+                    <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
                         YOURSELF WITH
                     </Typography>
-                    <Typography variant='h2' color='white' fontFamily='Archivo Black'>
+                    <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
                         PERSONALIZED
                     </Typography>
-                    <Typography variant='h2' fontFamily='Archivo Black' gutterBottom
+                    <Typography variant='h3' fontFamily='Druk Wide Bold' gutterBottom fontSize='1.3rem'
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
                             WebkitBackgroundClip: "text",
@@ -85,7 +86,7 @@ const Avatars = () => {
                             }}
                         ></img>
                         <Box>
-                            <Typography variant='h4' color='white' fontFamily='Archivo Black' gutterBottom>
+                            <Typography variant='h4' color='white' fontFamily='Druk Wide Bold' gutterBottom fontSize='1rem'>
                                 PERSONALIZED
                             </Typography>
                             <Typography color='grey'
@@ -106,7 +107,7 @@ const Avatars = () => {
                                 }}
                             ></img>
                             <Box>
-                                <Typography variant='h4' color='white' fontFamily='Archivo Black' gutterBottom>
+                                <Typography variant='h4' color='white' fontFamily='Druk Wide Bold' gutterBottom fontSize='1rem'>
                                     EXPRESSIVE
                                 </Typography>
                                 <Typography color='grey'
@@ -121,7 +122,7 @@ const Avatars = () => {
                 </Container>
 
             </Container>
-        </Box >
+        </Container >
     )
 }
 

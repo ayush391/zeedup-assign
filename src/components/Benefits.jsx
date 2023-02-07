@@ -15,13 +15,13 @@ const Benefits = () => {
     }, [scrollYProgress.current])
 
     return (
-        <Container sx={{ backgroundColor: '#000' }}
+        <Container maxWidth='xl' sx={{ backgroundColor: '#000' }}
             ref={ref}
 
         >
-            <Container maxWidth='xl' sx={{ paddingTop: '2rem' }}>
-                <Typography color='grey' variant='h5' fontFamily='Archivo Black'>BENEFITS</Typography>
-            </Container>
+            <Box sx={{ paddingTop: '2rem' }}>
+                <Typography color='grey' variant='h6' display='block' fontFamily='Druk Wide Bold'>BENEFITS</Typography>
+            </Box>
             <Container maxWidth='xl' sx={{ padding: '5rem 0rem', }} >
                 <MotionConfig transition={{
                     stiffness: 200,
@@ -30,7 +30,7 @@ const Benefits = () => {
                     // restDelta: 0.001
                 }}>
 
-                    <Typography color="white" variant='h1' fontFamily='Archivo Black'
+                    <Typography color="white" variant='h1' fontFamily='Druk Wide Bold'
                         component={motion.h1}
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
@@ -38,7 +38,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
-                            fontSize: '2.5rem'
+                            fontSize: '1.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -52,7 +52,7 @@ const Benefits = () => {
                     >
                         DISCOVER<br />
                     </Typography>
-                    <Typography color="white" variant='h1' fontFamily='Archivo Black'
+                    <Typography color="white" variant='h1' fontFamily='Druk Wide Bold'
                         component={motion.h1}
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
@@ -60,7 +60,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
-                            fontSize: '2.5rem'
+                            fontSize: '1.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -75,7 +75,7 @@ const Benefits = () => {
                         THE MOST<br />
 
                     </Typography>
-                    <Typography color="white" variant='h1' fontFamily='Archivo Black'
+                    <Typography color="white" variant='h1' fontFamily='Druk Wide Bold'
                         component={motion.h1}
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
@@ -83,7 +83,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
-                            fontSize: '2.5rem'
+                            fontSize: '1.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -98,7 +98,7 @@ const Benefits = () => {
                         INTERACTIVE<br />
 
                     </Typography>
-                    <Typography color="white" variant='h1' fontFamily='Archivo Black'
+                    <Typography color="white" variant='h1' fontFamily='Druk Wide Bold'
                         component={motion.h1}
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
@@ -106,7 +106,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
-                            fontSize: '2.5rem'
+                            fontSize: '1.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -122,7 +122,7 @@ const Benefits = () => {
                         WAY TO HOST<br />
 
                     </Typography>
-                    <Typography color="white" variant='h1' fontFamily='Archivo Black'
+                    <Typography color="white" variant='h1' fontFamily='Druk Wide Bold'
                         component={motion.h1}
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
@@ -130,7 +130,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
-                            fontSize: '2.5rem'
+                            fontSize: '1.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -144,7 +144,7 @@ const Benefits = () => {
                     >
                         3D EVENTS<br />
                     </Typography>
-                    <Typography color="white" variant='h1' fontFamily='Archivo Black'
+                    <Typography color="white" variant='h1' fontFamily='Druk Wide Bold'
                         component={motion.h1}
                         sx={{
                             background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
@@ -152,7 +152,7 @@ const Benefits = () => {
                             backgroundClip: 'text',
                             backgroundRepeat: 'no-repeat',
                             wordBreak: 'break-all',
-                            fontSize: '2.5rem'
+                            fontSize: '1.5rem'
                         }}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`

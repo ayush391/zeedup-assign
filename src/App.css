@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Druk Wide Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/font/Druk-Wide-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: 500;
+  src: url(./assets/font/circular-std-medium-500.ttf) format('truetype');
+}
+
 body {
   background-color: black;
 

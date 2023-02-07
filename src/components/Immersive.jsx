@@ -17,12 +17,12 @@ const Immersive = () => {
     }, [scrollYProgress.current])
 
     return (
-        <Box sx={{ backgroundColor: '#000', overflowX: 'hidden' }}
+        <Container maxWidth='xl' sx={{ backgroundColor: '#000', overflowX: 'hidden' }}
 
         >
-            <Container maxWidth='xl' sx={{ paddingTop: '2rem' }}>
-                <Typography color='grey' variant='h5' fontFamily='Archivo Black'>IMMERSIVE SPACES</Typography>
-            </Container>
+            <Box sx={{ paddingTop: '2rem' }}>
+                <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>IMMERSIVE SPACES</Typography>
+            </Box>
             <Container maxWidth='xl' sx={{ padding: '12rem 0rem', }}
                 ref={ref}
 
@@ -34,7 +34,7 @@ const Immersive = () => {
                     // restDelta: 0.001
                 }}>
 
-                    <Typography textAlign='center' color="white" variant='h1' fontFamily='Archivo Black' fontSize='3rem'
+                    <Typography textAlign='center' color="white" variant='h1' fontFamily='Druk Wide Bold' fontSize='3rem'
                         component={motion.h1}
                         style={{
                             // backgroundSize: `${(currentSize * 100)}%`
@@ -49,7 +49,7 @@ const Immersive = () => {
                     >
                         DISCOVER<br />
                     </Typography>
-                    <Typography textAlign='center' color="white" variant='h1' fontFamily='Archivo Black' fontSize='3rem'
+                    <Typography textAlign='center' color="white" variant='h1' fontFamily='Druk Wide Bold' fontSize='3rem'
                         // sx={{ width: '100%' }}
                         component={motion.h1}
                         // initial={{ x: '75%' }}
@@ -64,7 +64,7 @@ const Immersive = () => {
 
                 </MotionConfig>
             </Container>
-        </Box >
+        </Container >
     )
 }
 

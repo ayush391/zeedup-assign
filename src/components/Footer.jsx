@@ -62,14 +62,14 @@ const Footer = () => {
 
                 </Typography>
             </marquee >
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#000', padding: '2rem 0rem' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#000', padding: '1rem 0rem' }}>
                 <Typography variant='h7' color='white'>STAGVERSE</Typography>
                 <Box sx={{ display: 'flex', gap: 1 }}>
                     <Typography variant='caption' color='white'>IOS</Typography>
                     <Typography variant='caption' color='white'>ANDROID</Typography>
                     <Typography variant='caption' color='white'>DOCS</Typography>
-                    <Typography variant='caption' color='white'>TERMS</Typography>
-                    <Typography variant='caption' color='white'>PRIVACY</Typography>
+                    {/* <Typography variant='caption' color='white'>TERMS</Typography>
+                    <Typography variant='caption' color='white'>PRIVACY</Typography> */}
                 </Box>
             </Box>
         </Container>

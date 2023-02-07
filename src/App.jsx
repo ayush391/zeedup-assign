@@ -12,6 +12,9 @@ import ScrollBar from './components/ScrollBar'
 import GalleryHorizontal from './components/GalleryHorizontal'
 
 let theme = createTheme({
+  typography: {
+    fontFamily: 'Circular Std',
+  },
   palette: {
     background: {
       default: '#000',
@@ -38,7 +41,7 @@ function App() {
             <Benefits />
             <GalleryVertical />
             <Immersive />
-            <GalleryHorizontal />
+            {/* <GalleryHorizontal /> */}
             <Avatars />
             <Footer />
           </Box>

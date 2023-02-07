@@ -21,7 +21,7 @@ const Hero = () => {
     }, [loopingText])
 
     return (
-        <Container sx={{ height: '100vh' }}>
+        <Container maxWidth='xl' sx={{ height: '100vh' }}>
             <Box sx={{
                 position: 'absolute',
                 top: 0,
@@ -48,18 +48,18 @@ const Hero = () => {
             </Box>
             <Box
                 sx={{
-                    marginTop: '2rem'
+                    marginTop: '1rem'
                 }}
             >
 
-                <Typography variant='h1' color='white' fontFamily='Archivo Black' sx={{ fontSize: '2.5rem' }}>
+                <Typography variant='h1' color='white' fontFamily='Druk Wide Bold' sx={{ fontSize: '1.6rem' }}>
                     3D VENUES
                 </Typography>
-                <Typography variant='h1' color='white' fontFamily='Archivo Black' sx={{ fontSize: '2.5rem' }}>
+                <Typography variant='h1' color='white' fontFamily='Druk Wide Bold' sx={{ fontSize: '1.6rem' }}>
                     FOR INTERACTIVE
                 </Typography>
-                <Typography variant='h1' fontFamily='Archivo Black' sx={{
-                    fontSize: '2.5rem',
+                <Typography variant='h1' fontFamily='Druk Wide Bold' gutterBottom sx={{
+                    fontSize: '1.6rem',
                     background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent"

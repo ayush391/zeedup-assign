@@ -40,17 +40,17 @@ const GalleryCard = ({ idx, item }) => {
             }}
         >
             <Container
-
+                maxWidth='xl'
             >
 
-                <Typography color='white' variant='h7' fontFamily='Archivo Black'
+                <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
                     gutterBottom
                 >{(idx + 1) + '/' + 4}</Typography>
-                <Typography color='white' variant='h2' fontFamily='Archivo Black'
+                <Typography color='white' variant='h2' fontFamily='Druk Wide Bold' fontSize='1.5rem'
                     gutterBottom
                 >{item.title}</Typography>
 
-                <Typography color='grey'
+                <Typography color='grey' fontSize='1.5rem'
                     gutterBottom
                     marginBottom='2rem'
                 >{item.subtitle}</Typography>
