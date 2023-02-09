@@ -1,6 +1,6 @@
-import React, { useRef, useState, useLayoutEffect, useCallback } from "react"
+import React, { useRef, useState, useLayoutEffect, useCallback, useEffect } from "react"
 import {
-    motion,
+    motion, useScroll, useTransform,
 } from "framer-motion"
 import GalleryHorizontalCard from "./GalleryHorizontalCard"
 import { Box, Container } from "@mui/material"
@@ -26,34 +26,54 @@ const galleryItems = [
 
 
 const GalleryHorizontal = () => {
+    const ref = useRef(null)
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
+    // const X = useTransform(scrollYProgress, [0, 1], [0, -250])
+    const [x, setX] = useState()
+    useEffect(() => {
+        scrollYProgress.onChange((val) => setX(val * -300))
+        console.log(x)
+    }, [scrollYProgress])
     return (
-        <Container
-            maxWidth='xl'
-            style={{
-                height: '150vh'
+        <Box
+            ref={ref}
 
-            }}>
+
+            sx={{
+
+                height: '150%',
+                // position: 'sticky',
+                // top: 0,
+                // overflowX: 'hidden',
+
+            }}
+        >
+
             <Box component={motion.div}
-                sx={{
-                    display: { lg: 'flex', xs: 'none' },
+                maxWidth='lg'
 
+                sx={{
+                    position: 'sticky',
+                    top: '10%',
+                    overflow: '',
+                    display: { lg: 'flex', xs: 'none' },
                 }}
                 style={{
-                    gap: 5,
+                    x: `${x}%`,
                 }}
 
-                initial={{
-                    x: 0
-                }}
-                animate={{
-                    x: '-150vw'
-                }}
-                transition={{
-                    type: 'tween',
-                    duration: '50',
-                    repeat: 10,
-                    repeatType: "reverse",
-                }}
+            // initial={{
+            //     x: 0
+            // }}
+            // animate={{
+            //     x: '-150vw'
+            // }}
+            // transition={{
+            //     type: 'tween',
+            //     duration: '50',
+            //     repeat: 10,
+            //     repeatType: "reverse",
+            // }}
             >
                 {
                     galleryItems.map((item, idx) => {
@@ -63,7 +83,7 @@ const GalleryHorizontal = () => {
                     })
                 }
             </Box>
-        </Container>
+        </Box>
     )
 }
 

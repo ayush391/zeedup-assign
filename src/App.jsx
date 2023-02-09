@@ -38,13 +38,13 @@ function App() {
 
           <Box>
             <Navbar />
-            {/* <Hero /> */}
+            {/* <Hero />
             <Benefits />
             <GalleryVertical2 />
-            {/* <Immersive /> */}
-            {/* <GalleryHorizontal /> */}
-            {/* <Avatars />
-            <Footer /> */}
+            <Immersive /> */}
+            <GalleryHorizontal />
+            <Avatars />
+            <Footer />
           </Box>
         </Box>
       </ThemeProvider>

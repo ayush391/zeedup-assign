@@ -37,7 +37,7 @@ const GalleryHorizontalCard = ({ idx, item }) => {
             <img height='80%' src={item.img}>
             </img>
             <Container
-                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}
             >
 
                 <Typography color='white' variant='h7' fontSize='1rem' fontFamily='Druk Wide Bold'
