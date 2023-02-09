@@ -38,10 +38,10 @@ function App() {
 
           <Box>
             <Navbar />
-            {/* <Hero />
+            <Hero />
             <Benefits />
             <GalleryVertical2 />
-            <Immersive /> */}
+            <Immersive />
             <GalleryHorizontal />
             <Avatars />
             <Footer />
