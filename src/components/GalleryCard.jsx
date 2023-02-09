@@ -1,26 +1,39 @@
 import { Box, Container, Typography } from '@mui/material'
-import { calcLength, motion, useElementScroll, useScroll, useTransform } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import React, { useRef } from 'react'
 import CTAButton from './common/CTAButton'
 
 const GalleryCard = ({ idx, item }) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
-        target: ref, offset: ['-10% center', '20% center']
+        target: ref,
+        offset: ['-10% start', '80% start']
     })
 
-    const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0])
+    const opacityTrans = useTransform(scrollYProgress, [0, 0.4, 0.55, 1], [0, 1, 1, 0])
+    const opacity = useSpring(opacityTrans)
 
     return (
-        <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            height: '150vh',
-        }}>
-            <Box sx={{
-            }}>
+        <Box
+            component={motion.div}
+            ref={ref}
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'end',
+                height: '100vh',
+
+
+            }}
+            style={{
+                opacity: opacity,
+            }}
+        >
+            <Container
+                maxWidth='xl'
+                style={{
+                }}
+            >
                 <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
                     gutterBottom
                 >
@@ -33,15 +46,16 @@ const GalleryCard = ({ idx, item }) => {
                     {item.title}
                 </Typography>
 
-                <Typography color='grey' fontSize='1.5rem'
+                <Typography color='#8d8d8d' fontSize='1.2rem'
                     gutterBottom
                     marginBottom='2rem'
+                    maxWidth='sm'
                 >
                     {item.subtitle}
                 </Typography>
 
                 <CTAButton />
-            </Box >
+            </Container >
         </Box >
 
     )
