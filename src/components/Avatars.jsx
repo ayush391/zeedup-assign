@@ -11,9 +11,10 @@ import GalleryCard from './GalleryCard'
 const Avatars = () => {
     const ref = useRef(null)
     const refVid = useRef(null)
-    const { scrollYProgress } = useScroll({ target: ref, offset: ['-150px center', '50% center'] })
+    const { scrollYProgress } = useScroll({ target: ref, offset: ['-100px start', 'end start'] })
 
     const [currentSize, setCurrentSize] = useState(0)
+    const [play, setPlay] = useState(false)
 
     const inView = useInView(refVid)
 
@@ -26,103 +27,112 @@ const Avatars = () => {
 
     }, [scrollYProgress.current])
 
+    useEffect(() => setPlay(!play), [inView])
+
     return (
-        <Container maxWidth='xl' sx={{
-            backgroundColor: '#000',
-            overflowX: 'hidden'
-        }}
-            ref={ref}
-        >
-            <Box sx={{ paddingTop: '2rem' }}>
-                <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>EXPRESSIVE AVATARS</Typography>
-            </Box>
+        <>
+            <hr color='#5f5f5f'></hr>
 
-            <Container
-                maxWidth='xl'
-                sx={{
-                    display: { lg: 'flex' }
-                }}
+            <Container maxWidth='xl' sx={{
+                backgroundColor: '#000',
+
+            }}
+                ref={ref}
             >
+                <Box sx={{ paddingTop: '2rem' }}>
+                    <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>EXPRESSIVE AVATARS</Typography>
+                </Box>
+
                 <Container
-                    maxWidth='sm'
-                    sx={{ position: 'sticky', top: 0, alignSelf: 'flex-start', height: 'auto' }}
+                    maxWidth='xl'
+                    sx={{
+                        display: { lg: 'flex' },
+
+                    }}
                 >
-                    <video
-                        ref={refVid} width='100%' autoPlay={inView} muted src='https://stageverse.com/videos/avatar-video2-streaming.mp4'>
-
-                    </video>
-
-                </Container>
-
-                <Container
-                    maxWidth='sm'
-
-                    component={motion.div}
-                    style={{ y: currentSize }} sx={{ zIndex: 3, height: '100vh', margin: '50% 0' }}>
-                    <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
-                        EXPRESS
-                    </Typography>
-                    <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
-                        YOURSELF WITH
-                    </Typography>
-                    <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
-                        PERSONALIZED
-                    </Typography>
-                    <Typography variant='h3' fontFamily='Druk Wide Bold' gutterBottom fontSize='1.3rem'
-                        sx={{
-                            background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent"
-                        }}>
-                        AVATARS
-                    </Typography>
-                    <hr color='grey'></hr>
-                    <Box sx={{
-                        display: 'flex', alignItems: 'flex-start', margin: '1rem', gap: 3,
-                    }}>
-                        <img src='https://stageverse.com/images/other/personalized.svg'
+                    <Box
+                        maxWidth='md'
+                    >
+                        <video
                             style={{
-                                width: '2.5rem'
+                                position: 'sticky', top: '-25%'
                             }}
-                        ></img>
-                        <Box>
-                            <Typography variant='h4' color='white' fontFamily='Druk Wide Bold' gutterBottom fontSize='1rem'>
-                                PERSONALIZED
-                            </Typography>
-                            <Typography color='grey'
-                                gutterBottom
-                            >
-                                Customize your avatar to match your vibe! Includes limitless variations of expression, including Stable Diffusion AI-powered designer tools.
-                            </Typography>
-                        </Box>
+                            ref={refVid} width='80%' autoPlay={play} muted src='https://stageverse.com/videos/avatar-video2-streaming.mp4'>
+
+                        </video>
+
                     </Box>
-                    <Box>
+
+                    <Container
+                        maxWidth='sm'
+
+                        component={motion.div}
+                        style={{ y: currentSize }} sx={{ zIndex: 3, height: '100vh', margin: '50% 0' }}>
+                        <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
+                            EXPRESS
+                        </Typography>
+                        <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
+                            YOURSELF WITH
+                        </Typography>
+                        <Typography variant='h3' color='white' fontFamily='Druk Wide Bold' fontSize='1.3rem'>
+                            PERSONALIZED
+                        </Typography>
+                        <Typography variant='h3' fontFamily='Druk Wide Bold' gutterBottom fontSize='1.3rem'
+                            sx={{
+                                background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent"
+                            }}>
+                            AVATARS
+                        </Typography>
                         <hr color='grey'></hr>
                         <Box sx={{
                             display: 'flex', alignItems: 'flex-start', margin: '1rem', gap: 3,
                         }}>
-                            <img src='https://stageverse.com/images/other/expressive.svg'
+                            <img src='https://stageverse.com/images/other/personalized.svg'
                                 style={{
                                     width: '2.5rem'
                                 }}
                             ></img>
                             <Box>
                                 <Typography variant='h4' color='white' fontFamily='Druk Wide Bold' gutterBottom fontSize='1rem'>
-                                    EXPRESSIVE
+                                    PERSONALIZED
                                 </Typography>
                                 <Typography color='grey'
                                     gutterBottom
                                 >
-                                    We're pushing the boundaries of social interaction in the metaverse, including a variety of emoji-based reactions, emotes, and many other subtle and not-so-subtle expressive actions.
+                                    Customize your avatar to match your vibe! Includes limitless variations of expression, including Stable Diffusion AI-powered designer tools.
                                 </Typography>
                             </Box>
                         </Box>
-                    </Box>
+                        <Box>
+                            <hr color='grey'></hr>
+                            <Box sx={{
+                                display: 'flex', alignItems: 'flex-start', margin: '1rem', gap: 3,
+                            }}>
+                                <img src='https://stageverse.com/images/other/expressive.svg'
+                                    style={{
+                                        width: '2.5rem'
+                                    }}
+                                ></img>
+                                <Box>
+                                    <Typography variant='h4' color='white' fontFamily='Druk Wide Bold' gutterBottom fontSize='1rem'>
+                                        EXPRESSIVE
+                                    </Typography>
+                                    <Typography color='grey'
+                                        gutterBottom
+                                    >
+                                        We're pushing the boundaries of social interaction in the metaverse, including a variety of emoji-based reactions, emotes, and many other subtle and not-so-subtle expressive actions.
+                                    </Typography>
+                                </Box>
+                            </Box>
+                        </Box>
+
+                    </Container>
 
                 </Container>
-
-            </Container>
-        </Container >
+            </Container >
+        </>
     )
 }
 

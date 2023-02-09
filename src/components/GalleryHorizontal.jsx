@@ -37,7 +37,7 @@ const GalleryHorizontal = () => {
     // const X = useTransform(scrollYProgress, [0, 1], [0, -250])
     const [x, setX] = useState(50)
     useEffect(() => {
-        scrollYProgress.onChange((val) => setX((val * -300) + 50))
+        scrollYProgress.onChange((val) => setX((val * -400) + 50))
         console.log(x)
     }, [scrollYProgress])
     return (
@@ -47,7 +47,7 @@ const GalleryHorizontal = () => {
 
             sx={{
                 display: 'flex',
-                height: '150%',
+                height: '30%',
                 // gap: '10rem',
                 alignItems: 'flex-start',
                 // top: 0,

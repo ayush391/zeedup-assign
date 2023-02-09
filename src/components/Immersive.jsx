@@ -17,54 +17,58 @@ const Immersive = () => {
     }, [scrollYProgress.current])
 
     return (
-        <Container maxWidth='xl' sx={{ backgroundColor: '#000', overflowX: 'hidden' }}
+        <>
+            <hr color='#5f5f5f'></hr>
 
-        >
-            <Box sx={{ paddingTop: '2rem' }}>
-                <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>IMMERSIVE SPACES</Typography>
-            </Box>
-            <Container maxWidth='xl' sx={{ padding: '12rem 0rem', }}
-                ref={ref}
+            <Container maxWidth='xl' sx={{ backgroundColor: '#000', overflowX: 'hidden' }}
 
             >
-                <MotionConfig transition={{
-                    // stiffness: 200,
-                    type: 'spring',
-                    damping: 200,
-                    // restDelta: 0.001
-                }}>
+                <Box sx={{ paddingTop: '2rem' }}>
+                    <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>IMMERSIVE SPACES</Typography>
+                </Box>
+                <Container maxWidth='xl' sx={{ padding: '12rem 0rem', }}
+                    ref={ref}
 
-                    <Typography textAlign='center' color="white" variant='h1' fontFamily='Druk Wide Bold' fontSize='3rem'
-                        component={motion.h1}
-                        style={{
-                            // backgroundSize: `${(currentSize * 100)}%`
+                >
+                    <MotionConfig transition={{
+                        // stiffness: 200,
+                        type: 'spring',
+                        damping: 200,
+                        // restDelta: 0.001
+                    }}>
 
-                        }}
-                        // initial={{ x: '25%' }}
+                        <Typography textAlign='center' color="white" variant='h1' fontFamily='Druk Wide Bold' fontSize='3rem'
+                            component={motion.h1}
+                            style={{
+                                // backgroundSize: `${(currentSize * 100)}%`
 
-                        animate={{
-                            x: `${(-currentSize * 50)}vw`
+                            }}
+                            // initial={{ x: '25%' }}
 
-                        }}
-                    >
-                        DISCOVER<br />
-                    </Typography>
-                    <Typography textAlign='center' color="white" variant='h1' fontFamily='Druk Wide Bold' fontSize='3rem'
-                        // sx={{ width: '100%' }}
-                        component={motion.h1}
-                        // initial={{ x: '75%' }}
-                        animate={{
-                            x: `${(currentSize * 50)}vw`
+                            animate={{
+                                x: `${(-currentSize * 50)}vw`
 
-                        }}
-                    >
-                        STAGVERSE<br />
+                            }}
+                        >
+                            DISCOVER<br />
+                        </Typography>
+                        <Typography textAlign='center' color="white" variant='h1' fontFamily='Druk Wide Bold' fontSize='3rem'
+                            // sx={{ width: '100%' }}
+                            component={motion.h1}
+                            // initial={{ x: '75%' }}
+                            animate={{
+                                x: `${(currentSize * 50)}vw`
 
-                    </Typography>
+                            }}
+                        >
+                            STAGVERSE<br />
 
-                </MotionConfig>
-            </Container>
-        </Container >
+                        </Typography>
+
+                    </MotionConfig>
+                </Container>
+            </Container >
+        </>
     )
 }
 

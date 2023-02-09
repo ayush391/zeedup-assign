@@ -6,6 +6,12 @@ const Footer = () => {
     return (
         <Container
             maxWidth='xl'
+            sx={{
+                position: 'absolute',
+                // bottom: 0,
+                zIndex: 50,
+                left: 0
+            }}
         >
             <marquee width='100%' bgcolor='#000' style={{ border: '2px solid grey', borderLeft: 'none', borderRight: 'none' }}>
                 <Typography component='a' fontWeight='bolder' href='#' variant='h1' color='grey' sx={{
