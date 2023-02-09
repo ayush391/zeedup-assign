@@ -1,6 +1,7 @@
 import { Box, Container, Typography } from '@mui/material'
-import { motion, useScroll } from 'framer-motion'
+import { calcLength, motion, useElementScroll, useScroll, useTransform } from 'framer-motion'
 import React, { useEffect, useRef, useState } from 'react'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import CTAButton from './common/CTAButton'
 
 const GalleryCard = ({ idx, item }) => {
@@ -9,55 +10,40 @@ const GalleryCard = ({ idx, item }) => {
         target: ref, offset: ['-10% center', '20% center']
     })
 
-    const [opacity, setOpacity] = useState(0)
-
-
-
-    useEffect(() => {
-
-        scrollYProgress.onChange((val) => {
-            setOpacity(val)
-        })
-
-    }, [scrollYProgress.current])
+    const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0])
 
     return (
-        <Box
-            component={motion.div}
-            ref={ref}
-            style={{ opacity: opacity }}
-            sx={{
-
-                backgroundImage: { lg: `url(${item.img})` },
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                backgroundPosition: { lg: '100%' },
-
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'flex-start',
-                height: '100vh'
-            }}
-        >
-            <Container
-                maxWidth='xl'
-            >
-                <Box width='100%' component='img' sx={{ display: { xs: 'block', lg: 'none' } }} src={item.img}></Box>
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            height: '150vh',
+        }}>
+            <Box sx={{
+            }}>
                 <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
                     gutterBottom
-                >{(idx + 1) + '/' + 4}</Typography>
+                >
+                    {(idx + 1) + '/' + 4}
+                </Typography>
+
                 <Typography color='white' variant='h2' fontFamily='Druk Wide Bold' fontSize='1.5rem'
                     gutterBottom
-                >{item.title}</Typography>
+                >
+                    {item.title}
+                </Typography>
 
                 <Typography color='grey' fontSize='1.5rem'
                     gutterBottom
                     marginBottom='2rem'
-                >{item.subtitle}</Typography>
+                >
+                    {item.subtitle}
+                </Typography>
+
                 <CTAButton />
-            </Container>
-        </Box>
+            </Box >
+        </Box >
+
     )
 }
 

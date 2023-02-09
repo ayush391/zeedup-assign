@@ -12,10 +12,12 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.7",
+    "@react-spring/parallax": "^9.6.1",
     "framer-motion": "^9.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.1",
+    "react-parallax": "^3.5.1",
     "resize-observer-polyfill": "^1.5.1"
   },
   "devDependencies": {

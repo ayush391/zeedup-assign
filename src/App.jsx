@@ -10,6 +10,7 @@ import './App.css'
 import Footer from './components/Footer'
 import ScrollBar from './components/ScrollBar'
 import GalleryHorizontal from './components/GalleryHorizontal'
+import GalleryVertical2 from './components/GalleryVertical2'
 
 let theme = createTheme({
   typography: {
@@ -37,13 +38,13 @@ function App() {
 
           <Box>
             <Navbar />
-            <Hero />
+            {/* <Hero /> */}
             <Benefits />
-            <GalleryVertical />
-            <Immersive />
+            <GalleryVertical2 />
+            {/* <Immersive /> */}
             {/* <GalleryHorizontal /> */}
-            <Avatars />
-            <Footer />
+            {/* <Avatars />
+            <Footer /> */}
           </Box>
         </Box>
       </ThemeProvider>
