@@ -29,7 +29,7 @@ const GalleryHorizontalCard = ({ idx, item }) => {
 
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
+                justifyContent: 'top',
                 alignItems: 'center',
                 width: '100vw',
             }}

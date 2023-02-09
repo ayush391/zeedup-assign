@@ -25,6 +25,7 @@ const ScrollBar = () => {
                 background: '-webkit-linear-gradient(70deg, #f75df6 10%, #6e80ef 40%, #61dfc7 60%)',
                 backgroundRepeat: 'no-repeat',
                 position: 'fixed', top: 0, left: 0, right: 0,
+                zIndex: 100
             }} />
     )
 }

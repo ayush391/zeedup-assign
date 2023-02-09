@@ -4,6 +4,7 @@ import {
 } from "framer-motion"
 import GalleryHorizontalCard from "./GalleryHorizontalCard"
 import { Box, Container } from "@mui/material"
+import GalleryCardVertical from "./GalleryCardVertical"
 
 
 const galleryItems = [
@@ -24,14 +25,19 @@ const galleryItems = [
     },
 ]
 
+const textCard = {
+    title1: "EASILY\nCREATE",
+    title2: "METAVERSE\nVENUES",
+    subtitle: 'Stageverse provides a wide selection of customizable venues that makes it easy to get started in the metaverse with just a few clicks.'
+}
 
 const GalleryHorizontal = () => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
     // const X = useTransform(scrollYProgress, [0, 1], [0, -250])
-    const [x, setX] = useState()
+    const [x, setX] = useState(50)
     useEffect(() => {
-        scrollYProgress.onChange((val) => setX(val * -300))
+        scrollYProgress.onChange((val) => setX((val * -300) + 50))
         console.log(x)
     }, [scrollYProgress])
     return (
@@ -40,14 +46,18 @@ const GalleryHorizontal = () => {
 
 
             sx={{
-
+                display: 'flex',
                 height: '150%',
-                // position: 'sticky',
+                // gap: '10rem',
+                alignItems: 'flex-start',
                 // top: 0,
                 // overflowX: 'hidden',
 
             }}
         >
+
+
+            <GalleryCardVertical item={textCard} />
 
             <Box component={motion.div}
                 maxWidth='lg'
@@ -55,25 +65,15 @@ const GalleryHorizontal = () => {
                 sx={{
                     position: 'sticky',
                     top: '10%',
+                    // transform: 'translateX(500%)',
                     overflow: '',
-                    display: { lg: 'flex', xs: 'none' },
+                    display: 'flex',
+                    height: 'fit-content'
                 }}
                 style={{
                     x: `${x}%`,
                 }}
 
-            // initial={{
-            //     x: 0
-            // }}
-            // animate={{
-            //     x: '-150vw'
-            // }}
-            // transition={{
-            //     type: 'tween',
-            //     duration: '50',
-            //     repeat: 10,
-            //     repeatType: "reverse",
-            // }}
             >
                 {
                     galleryItems.map((item, idx) => {
