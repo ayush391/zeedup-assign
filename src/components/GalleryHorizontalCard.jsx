@@ -51,7 +51,7 @@ const GalleryHorizontalCard = ({ idx, item }) => {
             onMouseLeave={() => set({ xys: [0, 0, 1] })}
             style={{ transform: props.xys.to(trans) }}
         >
-            <Box component='img' onMouse sx={{
+            <Box component='img' sx={{
                 display: { xs: 'block', lg: 'none' },
                 width: '100%',
                 filter: openModal ? 'brightness(30%) blur(8px)' : '',

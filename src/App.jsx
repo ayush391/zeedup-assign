@@ -32,7 +32,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
 
-        <Box sx={{ display: { lg: 'flex' } }}>
+        <Box sx={{ display: { lg: 'flex', sx: 'block' } }}>
 
           <ScrollBar />
 
