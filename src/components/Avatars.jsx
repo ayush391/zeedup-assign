@@ -40,24 +40,46 @@ const Avatars = () => {
                 ref={ref}
             >
                 <Box sx={{ paddingTop: '2rem' }}>
-                    <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>EXPRESSIVE AVATARS</Typography>
+                    <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold' fontSize='1rem'>EXPRESSIVE AVATARS</Typography>
                 </Box>
 
                 <Container
                     maxWidth='xl'
                     sx={{
-                        display: { lg: 'flex' },
+                        display: { lg: 'flex', xs: 'block' },
+                        // flexDirection: 'column',
+                        // alignItems: 'center'
 
                     }}
                 >
                     <Box
-                        maxWidth='md'
+                        // maxWidth='md'
+                        sx={{
+                            display: { xs: 'none', lg: 'block' },
+                        }}
                     >
                         <video
                             style={{
                                 position: 'sticky', top: '-25%'
                             }}
                             ref={refVid} width='80%' autoPlay={play} muted src='https://stageverse.com/videos/avatar-video2-streaming.mp4'>
+
+                        </video>
+
+                    </Box>
+                    <Box
+                        // maxWidth='md'
+                        sx={{
+                            display: { xs: 'block', lg: 'none' },
+                            position: 'sticky', top: '0',
+
+                        }}
+                    >
+                        <video
+                            style={{
+                                position: 'sticky', top: '0',
+                            }}
+                            ref={refVid} width='100%' autoPlay={play} muted src='https://stageverse.com/videos/avatar-video2-streaming.mp4'>
 
                         </video>
 

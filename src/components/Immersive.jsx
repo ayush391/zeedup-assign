@@ -24,7 +24,7 @@ const Immersive = () => {
 
             >
                 <Box sx={{ paddingTop: '2rem' }}>
-                    <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold'>IMMERSIVE SPACES</Typography>
+                    <Typography color='grey' variant='h5' fontFamily='Druk Wide Bold' fontSize='1rem'>IMMERSIVE SPACES</Typography>
                 </Box>
                 <Container maxWidth='xl' sx={{ padding: '12rem 0rem', }}
                     ref={ref}

@@ -22,7 +22,7 @@ const Benefits = () => {
 
             >
                 <Box sx={{ paddingTop: '2rem' }}>
-                    <Typography color='grey' variant='h6' display='block' fontFamily='Druk Wide Bold'>BENEFITS</Typography>
+                    <Typography color='grey' variant='h6' display='block' fontFamily='Druk Wide Bold' fontSize='1rem'>BENEFITS</Typography>
                 </Box>
                 <Container maxWidth='xl' sx={{ padding: '5rem 0rem', }} >
                     <MotionConfig transition={{

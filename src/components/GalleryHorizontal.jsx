@@ -50,8 +50,8 @@ const GalleryHorizontal = () => {
                 sx={{
                     display: { xs: 'flex', lg: 'none' },
                     flexDirection: 'column',
-                    height: '30%',
-                    // gap: '10rem',
+                    // height: '30%',
+                    gap: '10rem',
                     alignItems: 'center',
                     // top: 0,
                     // overflowX: 'hidden',
@@ -69,9 +69,10 @@ const GalleryHorizontal = () => {
                         // position: 'sticky',
                         // top: '10%',
                         // transform: 'translateX(500%)',
-                        overflow: '',
-                        // display: 'flex',
-                        height: 'fit-content'
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '5rem'
+                        // width: '100%'
                     }}
                     style={{
                         // x: `${x}%`,

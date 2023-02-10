@@ -34,8 +34,10 @@ const GalleryHorizontalCard = ({ idx, item }) => {
                 width: '100vw',
             }}
         >
-            <img height='80%' src={item.img}>
-            </img>
+            <Box component='img' sx={{ display: { xs: 'block', lg: 'none' }, width: '100%' }} src={item.img}
+            />
+            <Box component='img' sx={{ display: { xs: 'none', lg: 'block' }, height: '80%' }} src={item.img}
+            />
             <Container
                 sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}
             >

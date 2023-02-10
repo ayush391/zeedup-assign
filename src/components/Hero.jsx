@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import BackgroundImage from '../assets/bgImageHero.webp'
 import CTAButton from './common/CTAButton'
+import ScrollDownIndicator from './ScrollDownIndicator'
 
 
 
@@ -33,6 +34,7 @@ const Hero = () => {
                 backgroundPosition: 'center center',
                 backgroundSize: "cover",
             }}>
+
                 <Box sx={{
                     position: 'absolute',
                     bottom: 0,
@@ -67,8 +69,11 @@ const Hero = () => {
                     {loopTextArray[loopingText]}
                 </Typography>
                 <CTAButton />
-            </Box>
 
+            </Box>
+            <Box sx={{ position: 'absolute', bottom: '5%' }}>
+                <ScrollDownIndicator />
+            </Box>
         </Container>
     )
 }

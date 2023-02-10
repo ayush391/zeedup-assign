@@ -22,7 +22,7 @@ const GalleryCardVertical = ({ idx, item }) => {
                 // flexDirection: 'column',
                 // justifyContent: 'end',
                 // height: '100vh',
-                position: 'absolute'
+                position: { lg: 'absolute', xs: 'static' }
 
 
             }}
