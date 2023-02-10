@@ -10,17 +10,17 @@ import GalleryCardVertical from "./GalleryCardVertical"
 const galleryItems = [
     {
         title: 'DESERT THEATER',
-        subtitle: 'Stageverse provides a no-code tool for designing expressive avatars and beautiful custom-branded venues. Includes tools to host highly-interactive live events that combine live streaming and gameplay elements.',
+        subtitle: 'A sun-drenched oasis in the infinite expanse of cyberspace. Your group chats just got more immersive as you get cozy with friends and community around the fire or take in a DJ set or movie on the big screen.',
         img: 'https://stageverse.com/images/landing-page/horizontal-scroll/spaces-3.png'
     },
     {
         title: 'PRIVATE ISLAND',
-        subtitle: 'Stageverse makes it easy for creators and brands to take their existing 2D hosted experiences and amplify them with playable, immersive 3D venues and experiences. Available on Web, iOS and Android.',
+        subtitle: 'Ever wanted your own private island? Well, now you can in this luxurious ocean escape. Kick back and relax by the pool, then invite your friends over for a rooftop party. This is life in Stageverse',
         img: 'https://stageverse.com/images/landing-page/horizontal-scroll/spaces-2.webp'
     },
     {
         title: 'THE GALLERY',
-        subtitle: 'Stageverse enables intimate conversations with others in metaverse spaces via spatial voice chat. This mimics real life with audio being amplified or diminished based on proximity to others.',
+        subtitle: 'The Gallery is a space for future art and expression, where you can connect with your community around shared passions or interests. Perfect for showcasing NFTs or spatializing your Instagram photo collection.',
         img: 'https://stageverse.com/images/landing-page/horizontal-scroll/spaces-4.webp'
     },
 ]
