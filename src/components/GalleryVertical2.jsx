@@ -47,7 +47,7 @@ const GalleryVertical2 = () => {
 
         <Box ref={ref} sx={{ margin: '10rem 0rem', }}
         >
-            <Box sx={{ position: 'sticky', top: 0, zIndex: -2, display: { lg: 'block', xs: 'none' } }}
+            <Box sx={{ position: 'sticky', top: 0, zIndex: -2, display: { xs: 'none', lg: 'block', } }}
             >
                 {
                     images.map((item, idx) => {

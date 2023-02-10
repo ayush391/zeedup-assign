@@ -14,7 +14,7 @@ const CarouselVertical = ({ img, idx, parentRef }) => {
     const start = idx * .25
     const end = start + .25
     const mid = (start + end) / 2
-    const { scrollYProgress } = useScroll({ target: parentRef, offset: ['0% start', '100% start'] })
+    const { scrollYProgress } = useScroll({ target: parentRef, offset: ['-10% start', '100% start'] })
     const opacityTrans = useTransform(scrollYProgress, [start, mid, end], [0, 1, 0])
     const opacity = useSpring(opacityTrans)
     return (
@@ -23,7 +23,8 @@ const CarouselVertical = ({ img, idx, parentRef }) => {
             style={{
                 opacity: opacity,
                 zIndex: -2,
-                width: '75%',
+                // width: '75%',
+                height: '100vh',
                 position: 'absolute',
                 top: 0,
                 right: 0
