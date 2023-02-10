@@ -42,7 +42,7 @@ function App() {
             <Benefits />
             <GalleryVertical2 />
             <Immersive />
-            <GalleryHorizontal />
+            {/* <GalleryHorizontal /> */}
             <Avatars />
             <Footer />
           </Box>

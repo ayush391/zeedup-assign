@@ -41,49 +41,98 @@ const GalleryHorizontal = () => {
         console.log(x)
     }, [scrollYProgress])
     return (
-        <Box
-            ref={ref}
+        <>
+            {/* mobile */}
+            <Box
+                ref={ref}
 
-
-            sx={{
-                display: 'flex',
-                height: '30%',
-                // gap: '10rem',
-                alignItems: 'flex-start',
-                // top: 0,
-                // overflowX: 'hidden',
-
-            }}
-        >
-
-
-            <GalleryCardVertical item={textCard} />
-
-            <Box component={motion.div}
-                maxWidth='lg'
 
                 sx={{
-                    position: 'sticky',
-                    top: '10%',
-                    // transform: 'translateX(500%)',
-                    overflow: '',
-                    display: 'flex',
-                    height: 'fit-content'
-                }}
-                style={{
-                    x: `${x}%`,
-                }}
+                    display: { xs: 'flex', lg: 'none' },
+                    flexDirection: 'column',
+                    height: '30%',
+                    // gap: '10rem',
+                    alignItems: 'center',
+                    // top: 0,
+                    // overflowX: 'hidden',
 
+                }}
             >
-                {
-                    galleryItems.map((item, idx) => {
-                        return (
-                            <GalleryHorizontalCard idx={idx} item={item} key={idx} />
-                        )
-                    })
-                }
+
+
+                <GalleryCardVertical item={textCard} />
+
+                <Box component={motion.div}
+                    maxWidth='lg'
+
+                    sx={{
+                        // position: 'sticky',
+                        // top: '10%',
+                        // transform: 'translateX(500%)',
+                        overflow: '',
+                        // display: 'flex',
+                        height: 'fit-content'
+                    }}
+                    style={{
+                        // x: `${x}%`,
+                    }}
+
+                >
+                    {
+                        galleryItems.map((item, idx) => {
+                            return (
+                                <GalleryHorizontalCard idx={idx} item={item} key={idx} />
+                            )
+                        })
+                    }
+                </Box>
             </Box>
-        </Box>
+
+            {/* desktop */}
+            <Box
+                ref={ref}
+
+
+                sx={{
+                    display: { xs: 'none', lg: 'flex' },
+                    height: '30%',
+                    // gap: '10rem',
+                    alignItems: 'flex-start',
+                    // top: 0,
+                    // overflowX: 'hidden',
+
+                }}
+            >
+
+
+                <GalleryCardVertical item={textCard} />
+
+                <Box component={motion.div}
+                    maxWidth='lg'
+
+                    sx={{
+                        position: 'sticky',
+                        top: '10%',
+                        // transform: 'translateX(500%)',
+                        overflow: '',
+                        display: 'flex',
+                        height: 'fit-content'
+                    }}
+                    style={{
+                        x: `${x}%`,
+                    }}
+
+                >
+                    {
+                        galleryItems.map((item, idx) => {
+                            return (
+                                <GalleryHorizontalCard idx={idx} item={item} key={idx} />
+                            )
+                        })
+                    }
+                </Box>
+            </Box>
+        </>
     )
 }
 

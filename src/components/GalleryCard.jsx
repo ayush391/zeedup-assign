@@ -26,7 +26,7 @@ const GalleryCard = ({ idx, item }) => {
 
             }}
             style={{
-                opacity: opacity,
+                // opacity: opacity,
             }}
         >
             <Container
@@ -34,6 +34,7 @@ const GalleryCard = ({ idx, item }) => {
                 style={{
                 }}
             >
+                <Box component='img' width='100%' sx={{ display: { xs: 'block', lg: 'none' } }} src={item.img} />
                 <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
                     gutterBottom
                 >

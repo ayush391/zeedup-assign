@@ -17,7 +17,7 @@ const ScrollBar = () => {
     return (
         <Box
             sx={{
-                display: 'flex'
+                display: { lg: 'flex', xs: 'none' }
             }}
         >
             <Box
