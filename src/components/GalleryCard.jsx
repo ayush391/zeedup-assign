@@ -14,51 +14,97 @@ const GalleryCard = ({ idx, item }) => {
     const opacity = useSpring(opacityTrans)
 
     return (
-        <Box
-            component={motion.div}
-            ref={ref}
-            sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'end',
-                height: '100vh',
+        <>
+            <Box
+                // component={motion.div}
+                // ref={ref}
+                sx={{
+                    display: { xs: 'flex', lg: 'none' },
+                    flexDirection: 'column',
+                    justifyContent: 'end',
+                    height: '100vh',
 
 
-            }}
-            style={{
-                // opacity: opacity,
-            }}
-        >
-            <Container
-                maxWidth='xl'
+                }}
+            // style={{
+            //     opacity: opacity,
+            // }}
+            >
+                <Container
+                    maxWidth='xl'
+                    style={{
+                    }}
+                >
+                    <Box component='img' width='100%' sx={{ display: { xs: 'block', lg: 'none' } }} src={item.img} />
+                    <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
+                        gutterBottom
+                    >
+                        {(idx + 1) + '/' + 4}
+                    </Typography>
+
+                    <Typography color='white' variant='h2' fontFamily='Druk Wide Bold' fontSize='1.5rem'
+                        gutterBottom
+                    >
+                        {item.title}
+                    </Typography>
+
+                    <Typography color='#8d8d8d' fontSize='1.2rem'
+                        gutterBottom
+                        marginBottom='2rem'
+                        maxWidth='sm'
+                    >
+                        {item.subtitle}
+                    </Typography>
+
+                    <CTAButton />
+                </Container >
+            </Box >
+
+            <Box
+                component={motion.div}
+                ref={ref}
+                sx={{
+                    display: { xs: 'none', lg: 'flex' },
+                    flexDirection: 'column',
+                    justifyContent: 'end',
+                    height: '100vh',
+
+
+                }}
                 style={{
+                    opacity: opacity,
                 }}
             >
-                <Box component='img' width='100%' sx={{ display: { xs: 'block', lg: 'none' } }} src={item.img} />
-                <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
-                    gutterBottom
+                <Container
+                    maxWidth='xl'
+                    style={{
+                    }}
                 >
-                    {(idx + 1) + '/' + 4}
-                </Typography>
+                    <Box component='img' width='100%' sx={{ display: { xs: 'block', lg: 'none' } }} src={item.img} />
+                    <Typography color='white' variant='h7' fontFamily='Druk Wide Bold' fontSize='1rem'
+                        gutterBottom
+                    >
+                        {(idx + 1) + '/' + 4}
+                    </Typography>
 
-                <Typography color='white' variant='h2' fontFamily='Druk Wide Bold' fontSize='1.5rem'
-                    gutterBottom
-                >
-                    {item.title}
-                </Typography>
+                    <Typography color='white' variant='h2' fontFamily='Druk Wide Bold' fontSize='1.5rem'
+                        gutterBottom
+                    >
+                        {item.title}
+                    </Typography>
 
-                <Typography color='#8d8d8d' fontSize='1.2rem'
-                    gutterBottom
-                    marginBottom='2rem'
-                    maxWidth='sm'
-                >
-                    {item.subtitle}
-                </Typography>
+                    <Typography color='#8d8d8d' fontSize='1.2rem'
+                        gutterBottom
+                        marginBottom='2rem'
+                        maxWidth='sm'
+                    >
+                        {item.subtitle}
+                    </Typography>
 
-                <CTAButton />
-            </Container >
-        </Box >
-
+                    <CTAButton />
+                </Container >
+            </Box >
+        </>
     )
 }
 
